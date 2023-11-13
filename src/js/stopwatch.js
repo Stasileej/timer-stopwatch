@@ -8,6 +8,8 @@ function stopwatch() {
   const startBtn = document.getElementById('start-sw');
   const stopBtn = document.getElementById('stop-sw');
   const resetBtn = document.getElementById('reset-sw');
+  const title = document.querySelector('title');
+  const stopwatchTab = document.querySelector('[data-tab="stopwatch"]');
 
   let timeflow;
   let hour = 0;
@@ -22,6 +24,10 @@ function stopwatch() {
     sec.innerText = padZero(second);
     count.innerText = padZero(counter);
   };
+
+  function titleTimer (hrVal = 0, minVal = 0, secVal = 0) {
+    title.innerText = `Stopwatch ${padZero(hrVal)}:${padZero(minVal)}:${padZero(secVal)}`
+  }
 
   const chronograph = () => {
     if (!timeflow) return;
@@ -42,6 +48,10 @@ function stopwatch() {
 
     numbersRendering();
 
+    if (stopwatchTab.classList.contains('selector__tab--active')) {
+      titleTimer(hour, minute, second);
+    }
+
     setTimeout(chronograph, 10);
   };
 
@@ -61,6 +71,7 @@ function stopwatch() {
     second = 0;
     counter = 0;
     numbersRendering();
+    title.innerText = `Stopwatch`
   });
 }
 

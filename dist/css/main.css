@@ -79,6 +79,7 @@ main {
 .btn-tab {
   font-size: 2.3rem;
   border: none;
+  opacity: 0.3;
   border-bottom: 5px solid transparent;
   background-color: transparent;
   min-height: 3.5rem;
@@ -88,6 +89,7 @@ main {
 .btn-tab:hover {
   cursor: pointer;
   translate: 0 1px;
+  opacity: 0.7;
 }
 .btn-tab:active {
   translate: 0 2px;
@@ -127,6 +129,11 @@ main {
   line-height: 1.6;
   border-bottom: 1px solid transparent;
   font-size: 2rem;
+  -moz-appearance: textfield;
+}
+.selector__content--inputs input::-webkit-outer-spin-button, .selector__content--inputs input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
 }
 .selector__content--buttons .btn {
   font-size: 1.6rem;
@@ -144,6 +151,9 @@ main {
 .selector__content--buttons .btn:active {
   translate: 0 2px;
 }
+.selector__tab--active {
+  opacity: 1;
+}
 
 .typewriter {
   background-color: #e2d8be;
@@ -157,9 +167,6 @@ main {
 }
 .typewriter .btn-tab {
   font-family: "Typewriter", Helvetica, Arial, sans-serif;
-}
-.typewriter .btn-tab:hover {
-  border-bottom: 2px solid #1d1c18;
 }
 .typewriter .btn-tab:active {
   text-shadow: 1px 1px 2px rgba(29, 28, 24, 0.5);
@@ -205,9 +212,6 @@ main {
 .typewriter.dark .btn-tab {
   font-family: "Typewriter", Helvetica, Arial, sans-serif;
 }
-.typewriter.dark .btn-tab:hover {
-  border-bottom: 2px solid #e2d8be;
-}
 .typewriter.dark .btn-tab:active {
   text-shadow: 2px 2px 4px #e2d8be;
 }
@@ -252,9 +256,6 @@ main {
 .jb24 .btn-tab {
   font-family: "24", Helvetica, Arial, sans-serif;
   font-size: 3.2rem;
-}
-.jb24 .btn-tab:hover {
-  border-bottom: 2px solid #183f72;
 }
 .jb24 .btn-tab:active {
   text-shadow: 1px 1px 2px rgba(24, 63, 114, 0.5);
@@ -304,9 +305,6 @@ main {
 .jb24.dark .btn-tab {
   font-family: "24", Helvetica, Arial, sans-serif;
   font-size: 3.2rem;
-}
-.jb24.dark .btn-tab:hover {
-  border-bottom: 2px solid #dbb73e;
 }
 .jb24.dark .btn-tab:active {
   text-shadow: 1px 1px 2px rgba(219, 183, 62, 0.5);

@@ -11,6 +11,8 @@ function timer() {
   const stopBtn = document.getElementById('stop-timer');
   const resetBtn = document.getElementById('reset-timer');
   const inputContainer = document.querySelector('.selector__content--inputs');
+  const title = document.querySelector('title');
+  const timerTab = document.querySelector('[data-tab="timer"]');
 
   let timeflow = false;
   let timerStarter = true;
@@ -26,6 +28,23 @@ function timer() {
     hrInput.value = minInput.value = secInput.value = null;
     renderNumbers();
     inputContainer.style.display = null;
+    title.innerText = `Timer`;
+  }
+
+  function startTimerBtn() {
+    if (timerStarter) {
+      counter = hours * 3600 + minutes * 60 + seconds;
+      if (!counter) return;
+      [hours, minutes, seconds] = [0, 0, 0];
+      timerStarter = false;
+      timeflow = true;
+      [hrInput.value, minInput.value, secInput.value] = [null, null, null];
+      startTimer();
+    } else {
+      timeflow = true;
+      startTimer();
+    }
+    inputContainer.style.display = 'none';
   }
 
   function inputCheck() {
@@ -68,25 +87,30 @@ function timer() {
     targetElement.innerText = padZero(value);
   }
 
+  function activeOnHover(element) {
+    element.addEventListener('mouseover', function () {
+      this.focus();
+    });
+  }
+  activeOnHover(hrInput);
+  activeOnHover(minInput);
+  activeOnHover(secInput);
+
+  function startOnEnter(element) {
+    element.addEventListener('keydown', function (event) {
+      if (event.key !== 'Enter') return;
+      startTimerBtn();
+    });
+  }
+  startOnEnter(hrInput);
+  startOnEnter(minInput);
+  startOnEnter(secInput);
+
   hrInput.addEventListener('input', handleInput);
   minInput.addEventListener('input', handleInput);
   secInput.addEventListener('input', handleInput);
 
-  startBtn.addEventListener('click', () => {
-    if (timerStarter) {
-      counter = hours * 3600 + minutes * 60 + seconds;
-      if (!counter) return;
-      [hours, minutes, seconds] = [0, 0, 0];
-      timerStarter = false;
-      timeflow = true;
-      [hrInput.value, minInput.value, secInput.value] = [null, null, null];
-      startTimer();
-    } else {
-      timeflow = true;
-      startTimer();
-    }
-    inputContainer.style.display = 'none';
-  });
+  startBtn.addEventListener('click', startTimerBtn);
 
   stopBtn.addEventListener('click', () => (timeflow = false));
 
@@ -98,6 +122,10 @@ function timer() {
     sec.innerText = padZero(secVal);
   }
 
+  function titleTimer (hrVal = 0, minVal = 0, secVal = 0) {
+    title.innerText = `Timer ${padZero(hrVal)}:${padZero(minVal)}:${padZero(secVal)}`
+  }
+
   function startTimer() {
     if (!timeflow) return;
 
@@ -107,10 +135,14 @@ function timer() {
     let secRest = Math.floor(counter % 60);
 
     renderNumbers(hrRest, minRest, secRest);
+    
+    if (timerTab.classList.contains('selector__tab--active')) {
+      titleTimer(hrRest, minRest, secRest);
+    }
 
     setTimeout(startTimer, 1000);
 
-    if (counter <= 0) {
+    if (counter < 0) {
       renderNumbers();
       resetAll();
       return;
