@@ -5,19 +5,10 @@ function menu() {
   const toggleScheme = document.querySelector('#color-scheme');
   const body = document.getElementById('body');
 
-  const toggleActive = () => {
-    menuBtn.classList.toggle('active');
-  };
-  const toggleNotActive = () => {
-    menuBtn.classList.toggle('not-active');
-  };
-  const toggleHidden = () => {
-    menuContainer.classList.toggle('hidden');
-  };
   menuBtn.addEventListener('click', () => {
-    toggleActive();
-    toggleNotActive();
-    toggleHidden();
+    menuBtn.classList.toggle('active');
+    menuBtn.classList.toggle('not-active');
+    menuContainer.classList.toggle('hidden');
   });
 
   toggleTheme.addEventListener('click', () => {
