@@ -1,0 +1,61 @@
+.typewriter.dark {
+  background-color: $color-primary-dark;
+  font-family: $font-type;
+  * {
+    color: $color-primary;
+  }
+
+  main {
+    width: 100%;
+  }
+
+  .btn-tab {
+    font-family: $font-type;
+
+    &:hover {
+      border-bottom: 2px solid $color-primary;
+    }
+    &:active {
+      text-shadow: 2px 2px 4px rgba($color-primary, 1);
+    }
+  }
+
+  .selector {
+    &__content {
+      &--digit {
+        font-size: 5.6rem;
+        display: inline-block;
+      }
+      &--inputs {
+        input {
+          font-family: $font-type;
+          color: rgba($color-primary, 0.5);
+          &::placeholder {
+            color: rgba($color-primary, 0.3);
+        }
+          &:hover, &:focus {
+            border-bottom: 1px solid $color-primary;
+          }
+        }
+      }
+      &--buttons {
+        .btn {
+          font-family: $font-type;
+
+          &:hover {
+            border-bottom: 2px solid $color-primary;
+          }
+          &:active {
+            text-shadow: 2px 2px 4px rgba($color-primary, 1);
+          }
+        }
+      }
+    }
+    &__tab {
+      &--active {
+        border-bottom: 2px solid $color-primary;
+        text-shadow: 2px 2px 8px rgba($color-primary, 0.5);
+      }
+    }
+  }
+}

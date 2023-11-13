@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Timer | Stopwatch</title>
+    <link rel="icon" href="assets/timer.svg" sizes="any" type="image/svg+xml" />
+    <link rel="stylesheet" href="css/main.css" />
+    <script src="js/bundle.js" defer></script>
+  </head>
+  <body id="body" class="container rel typewriter">
+    <div class="menu-btn not-active">
+      <span class="menu-btn-span"></span>
+      <span class="menu-btn-span"></span>
+      <span class="menu-btn-span"></span>
+    </div>
+    <div class="menu-style hidden">
+      <div class="menu-checkbox container gap-2">
+        <input type="checkbox" id="theme" /><label for="theme"></label><span>toggle theme</span>
+      </div>
+      <div class="menu-checkbox container gap-2">
+        <input type="checkbox" id="color-scheme" /><label for="color-scheme"></label><span>color scheme</span>
+      </div>
+    </div>
+    <main class="pad-2">
+      <section class="selecor">
+        <div class="selector__tab-contaner container">
+          <button class="btn-tab selector__tab selector__tab--active" data-tab="stopwatch">Stopwatch</button>
+          <button class="btn-tab selector__tab" data-tab="timer">Timer</button>
+        </div>
+        <div class="selector__content selector__content--stopwatch selector__content--active">
+          <div class="container gap-2 selector__content--numbers">
+            <div class="selector__content--digit-txt-container">
+              <span class="selector__content--digit" id="hr-sw">00</span>
+              <span class="selector__content--txt">hr</span>
+            </div>
+            <div class="selector__content--digit-txt-container">
+              <span class="selector__content--digit" id="min-sw">00</span>
+              <span class="selector__content--txt">min</span>
+            </div>
+            <div class="selector__content--digit-txt-container">
+              <span class="selector__content--digit" id="sec-sw">00</span>
+              <span class="selector__content--txt">sec</span>
+            </div>
+            <div class="selector__content--digit-txt-container">
+              <span class="selector__content--digit" id="count-sw">00</span>
+            </div>
+          </div>
+          <div class="selector__content--buttons container gap-2">
+            <button class="btn" id="start-sw">Start</button>
+            <button class="btn" id="stop-sw">Stop</button>
+            <button class="btn" id="reset-sw">Reset</button>
+          </div>
+        </div>
+
+        <div class="selector__content selector__content--timer">
+          <div class="container gap-2 selector__content--inputs">
+            <input type="text" pattern="[0-9]*" inputmode="numeric" placeholder="00 hr" id="input-hr" />
+            <input type="text" pattern="[0-9]*" inputmode="numeric" placeholder="00 min" id="input-min" />
+            <input type="text" pattern="[0-9]*" inputmode="numeric" placeholder="00 sec" id="input-sec" />
+          </div>
+          <div class="container gap-2 selector__content--numbers">
+            <div class="selector__content--digit-txt-container">
+              <span class="selector__content--digit" id="hr-timer">00</span>
+              <span class="selector__content--txt">hr</span>
+            </div>
+            <div class="selector__content--digit-txt-container">
+              <span class="selector__content--digit" id="min-timer">00</span>
+              <span class="selector__content--txt">min</span>
+            </div>
+            <div class="selector__content--digit-txt-container">
+              <span class="selector__content--digit" id="sec-timer">00</span>
+              <span class="selector__content--txt">sec</span>
+            </div>
+          </div>
+          <div class="selector__content--buttons container gap-2">
+            <button class="btn" id="start-timer">Start</button>
+            <button class="btn" id="stop-timer">Stop</button>
+            <button class="btn" id="reset-timer">Reset</button>
+          </div>
+        </div>
+      </section>
+    </main>
+  </body>
+</html>

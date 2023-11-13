@@ -1,0 +1,88 @@
+main {
+  width: 100%;
+}
+
+.btn-tab {
+  font-size: 2.3rem;
+  border: none;
+  border-bottom: 5px solid $color-transparent;
+  background-color: transparent;
+  min-height: 3.5rem;
+  min-width: 15rem;
+  transition: 0.05s;
+
+  &:hover {
+    cursor: pointer;
+    translate: 0 1px;
+  }
+  &:active {
+    translate: 0 2px;
+  }
+}
+
+.selector {
+  &__content {
+    display: none;
+    padding-top: 1.8rem;
+
+    &--active {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 1.6rem;
+    }
+
+    &--digit-txt-container {
+      display: inline-block;
+    }
+
+    &--numbers {
+      width: 100%;
+      text-align: center;
+    }
+
+    &--digit {
+      font-size: 6.2rem;
+      min-width: 7rem;
+    }
+
+    &--txt {
+      font-size: 1.6rem;
+    }
+
+    &--inputs {
+      input {
+        background-color: $color-transparent;
+        max-width: 9rem;
+        border: none;
+        outline: none;
+        padding: 0.5rem;
+        line-height: 1.6;
+        border-bottom: 1px solid $color-transparent;
+        font-size: 2rem;
+      }
+    }
+
+    &--buttons {
+      .btn {
+        font-size: 1.6rem;
+        border: none;
+        border-bottom: 2px solid $color-transparent;
+        background-color: transparent;
+        min-height: 2.6rem;
+        min-width: 10rem;
+        transition: 0.05s;
+
+        &:hover {
+          cursor: pointer;
+          translate: 0 1px;
+        }
+        &:active {
+          translate: 0 2px;
+        }
+      }
+    }
+  }
+}
+

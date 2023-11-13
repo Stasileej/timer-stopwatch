@@ -1,0 +1,61 @@
+.typewriter {
+  background-color: $color-primary;
+  font-family: $font-type;
+  * {
+    color: $color-primary-dark;
+  }
+
+  main {
+    width: 100%;
+  }
+
+  .btn-tab {
+    font-family: $font-type;
+
+    &:hover {
+      border-bottom: 2px solid $color-primary-dark;
+    }
+    &:active {
+      text-shadow: 1px 1px 2px rgba($color-primary-dark, 0.5);
+    }
+  }
+
+  .selector {
+    &__content {
+      &--digit {
+        font-size: 5.6rem;
+        display: inline-block;
+      }
+      &--inputs {
+        input {
+          font-family: $font-type;
+          color: rgba($color-primary-dark, 0.5);
+          &::placeholder {
+            color: rgba($color-primary-dark, 0.3);
+        }
+          &:hover, &:focus {
+            border-bottom: 1px solid $color-primary-dark;
+          }
+        }
+      }
+      &--buttons {
+        .btn {
+          font-family: $font-type;
+
+          &:hover {
+            border-bottom: 2px solid $color-primary-dark;
+          }
+          &:active {
+            text-shadow: 1px 1px 2px rgba($color-primary-dark, 0.5);
+          }
+        }
+      }
+    }
+    &__tab {
+      &--active {
+        border-bottom: 2px solid $color-primary-dark;
+        text-shadow: 1px 1px 2px rgba($color-primary-dark, 0.5);
+      }
+    }
+  }
+}

@@ -1,0 +1,76 @@
+$color-primary: #e2d8be;
+$color-primary-dark: #1d1c18;
+
+$color-secondary: #dbb73e;
+$color-secondary-dark: #183f72;
+
+$color-white: #ebebeb;
+$color-transparent: transparent;
+
+$font-primary: Helvetica, Arial, sans-serif;
+$font-type: "Typewriter", Helvetica, Arial, sans-serif;
+$font-24: "24", Helvetica, Arial, sans-serif;
+
+$bp-largest: 75em; // 1200px
+$bp-large: 62.5em; // 1000px
+$bp-medium: 50em; // 800px;
+$bp-small: 37.5em; // 600px;
+$bp-smallest: 22em; // 320px;
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+html,
+body {
+  min-height: 100vh;
+}
+
+html {
+  box-sizing: border-box;
+  font-size: 62.5%; // 10px/16px = 62.5% -> 1rem = 10px
+
+  @media only screen and (min-width: $bp-largest) {
+    font-size: 100%;
+}
+
+  @media only screen and (max-width: $bp-small) {
+      font-size: 45%;
+  }
+  @media only screen and (max-width: $bp-smallest) {
+      font-size: 32%;
+  }
+}
+
+body {
+  font-weight: 400;
+  line-height: 1.6;
+  font-family: $font-primary;
+  
+}
+
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.col {
+  flex-direction: column;
+}
+.gap-2 {
+  gap: 2rem;
+}
+.pad-2 {
+  padding: 2rem;
+}
+.rel {
+  position: relative;
+}
+.hidden {
+  display: none;
+  transform: translateY(-10rem);
+}
