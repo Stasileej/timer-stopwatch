@@ -4,7 +4,7 @@ function stopwatch() {
   const hr = document.getElementById('hr-sw');
   const min = document.getElementById('min-sw');
   const sec = document.getElementById('sec-sw');
-  const count = document.getElementById('count-sw');
+  // const count = document.getElementById('count-sw');
   const startBtn = document.getElementById('start-sw');
   const stopBtn = document.getElementById('stop-sw');
   const resetBtn = document.getElementById('reset-sw');
@@ -22,7 +22,7 @@ function stopwatch() {
     hr.innerText = padZero(hour);
     min.innerText = padZero(minute);
     sec.innerText = padZero(second);
-    count.innerText = padZero(counter);
+    // count.innerText = padZero(counter);
   };
 
   function titleTimer (hrVal = 0, minVal = 0, secVal = 0) {
@@ -33,7 +33,7 @@ function stopwatch() {
     if (!timeflow) return;
 
     counter++;
-    if (counter === 100) {
+    if (counter === 1) {
       second++;
       counter = 0;
     }
@@ -52,7 +52,7 @@ function stopwatch() {
       titleTimer(hour, minute, second);
     }
 
-    setTimeout(chronograph, 10);
+    setTimeout(chronograph, 1000);
   };
 
   startBtn.addEventListener('click', () => {
