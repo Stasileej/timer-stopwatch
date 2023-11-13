@@ -69,7 +69,7 @@ body {
 
 .hidden {
   display: none;
-  transform: translateY(-10rem);
+  transform: translateY(-18rem);
 }
 
 main {
@@ -366,57 +366,51 @@ main {
 .menu-style .menu-checkbox label {
   cursor: pointer;
   text-indent: -9999px;
-  width: 2rem;
-  height: 1rem;
+  width: 20px;
+  height: 10px;
   background: #e2d8be;
   display: block;
-  border-radius: 1rem;
+  border-radius: 10px;
   border: 1px solid #dbb73e;
   position: relative;
 }
 .menu-style .menu-checkbox label:after {
   content: "";
   position: absolute;
-  top: 0.05rem;
-  left: 0.1rem;
-  width: 0.8rem;
-  height: 0.8rem;
+  top: 0;
+  left: 0;
+  width: 8px;
+  height: 8px;
   background: #ebebeb;
-  border-radius: 0.8rem;
+  border-radius: 8px;
   transition: 0.3s;
 }
 .menu-style .menu-checkbox label:active:after {
-  width: 1.3rem;
+  width: 12px;
 }
 .menu-style .menu-checkbox input:checked + label {
   background: #dbb73e;
 }
 .menu-style .menu-checkbox input:checked + label:after {
-  left: calc(100% - 0.1rem);
+  left: 100%;
   transform: translateX(-100%);
 }
-.menu-style .menu-checkbox span.typewriter {
-  font-family: "Typewriter", Helvetica, Arial, sans-serif;
-  color: #1d1c18;
+
+.typewriter .menu-style .menu-checkbox span, .typewriter-dark .menu-style .menu-checkbox span {
+  font-size: 16px;
+  line-height: 36px;
 }
-.menu-style .menu-checkbox span.typewriter-dark {
-  font-family: "Typewriter", Helvetica, Arial, sans-serif;
-  color: #e2d8be;
-}
-.menu-style .menu-checkbox span.jb24 {
-  font-family: "24", Helvetica, Arial, sans-serif;
-  color: #183f72;
-}
-.menu-style .menu-checkbox span.jb24-dark {
-  font-family: "24", Helvetica, Arial, sans-serif;
-  color: #dbb73e;
+
+.jb24 .menu-style .menu-checkbox span, .jb24-dark .menu-style .menu-checkbox span {
+  font-size: 18px;
+  line-height: 36px;
 }
 
 .menu-btn {
   position: absolute;
   top: 2rem;
   right: 2rem;
-  width: 3rem;
+  width: 30px;
   cursor: pointer;
   z-index: 1;
 }
@@ -425,7 +419,7 @@ main {
   display: block;
   width: 100%;
   border-radius: 0.1rem;
-  height: 0.3rem;
+  height: 3px;
   background: #ebebeb;
   transition: all 0.2s;
   position: relative;
@@ -446,7 +440,7 @@ main {
 }
 
 .menu-btn-span + .menu-btn-span {
-  margin-top: 0.6rem;
+  margin-top: 6px;
 }
 
 .active .menu-btn-span:nth-child(1) {
@@ -479,21 +473,21 @@ main {
     transform: rotate(0);
   }
   50% {
-    top: 0.9rem;
+    top: 9px;
     transform: rotate(0);
   }
   100% {
-    top: 0.9rem;
+    top: 9px;
     transform: rotate(45deg);
   }
 }
 @keyframes top-2 {
   0% {
-    top: 0.9rem;
+    top: 9px;
     transform: rotate(45deg);
   }
   50% {
-    top: 0.9rem;
+    top: 9px;
     transform: rotate(0deg);
   }
   100% {
@@ -507,21 +501,21 @@ main {
     transform: rotate(0);
   }
   50% {
-    bottom: 0.9rem;
+    bottom: 9px;
     transform: rotate(0);
   }
   100% {
-    bottom: 0.9rem;
+    bottom: 9px;
     transform: rotate(135deg);
   }
 }
 @keyframes bottom-2 {
   0% {
-    bottom: 0.9rem;
+    bottom: 9px;
     transform: rotate(135deg);
   }
   50% {
-    bottom: 0.9rem;
+    bottom: 9px;
     transform: rotate(0);
   }
   100% {

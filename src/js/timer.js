@@ -145,7 +145,7 @@ function timer() {
     if (counter < 0) {
       renderNumbers();
       resetAll();
-      alert(`Time's Over`);
+      alert(`Time is Over`);
       return;
     }
   }
